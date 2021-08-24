@@ -31,9 +31,18 @@ struct Pasteboard {
 }
 
 extension View {
-    @ViewBuilder
     func makeDismissable(_ dismiss: (() -> Void)?) -> some View {
         self
+    }
+    
+    func paletteButtonStyle() -> some View {
+        self.buttonStyle(PlainButtonStyle())
+            .foregroundColor(.accentColor)
+            .padding(.vertical)
+    }
+    
+    func popoverPadding() -> some View {
+        self.padding(.horizontal)
     }
 }
 

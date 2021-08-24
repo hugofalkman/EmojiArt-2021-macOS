@@ -32,6 +32,7 @@ struct PaletteChoser: View {
             Image(systemName: "paintpalette")
         }
         .font(emojiFont)
+        .paletteButtonStyle()
         .contextMenu { contextMenu }
     }
     
@@ -84,6 +85,7 @@ struct PaletteChoser: View {
 //        }
         .popover(item: $paletteToEdit) { palette in
             PaletteEditor(palette: $store.palettes[palette])
+                .popoverPadding()
             // Wrap in Navigationview to make it dismissable
                 .makeDismissable { paletteToEdit = nil }
         }
